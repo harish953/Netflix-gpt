@@ -25,6 +25,8 @@ const MOVIE_OPTIONS = {
   },
 };
 const MOVIE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+const POPULAR_URL =
+  "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
 
 export {
   LOGO_URL,
@@ -34,4 +36,5 @@ export {
   NOW_PLAYING_URL,
   MOVIE_OPTIONS,
   MOVIE_IMAGE_URL,
+  POPULAR_URL,
 };

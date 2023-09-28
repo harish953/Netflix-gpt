@@ -14,7 +14,7 @@ const VideoBackground = ({ movieId }) => {
     <div className=" w-full">
       {/* Mute/Unmute button */}
       <button
-        className="bg-transparent text-white p-2 rounded-md absolute bottom-20 text-2xl right-4 z-30"
+        className="bg-transparent text-gray-400 p-2 rounded-md absolute bottom-36 text-2xl right-4 z-30"
         onClick={toggleMute}
       >
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
