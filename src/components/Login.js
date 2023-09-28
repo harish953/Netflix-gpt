@@ -42,7 +42,6 @@ const Login = () => {
         );
 
         const user = userCredential.user;
-        console.log("User created:", user);
 
         await updateProfile(user, { displayName: name.current.value });
         const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -54,9 +53,6 @@ const Login = () => {
             photoURL: photoURL,
           })
         );
-
-        console.log("Display name updated successfully");
-        navigate("/browse");
       } else {
         const userCredential = await signInWithEmailAndPassword(
           auth,
@@ -66,8 +62,6 @@ const Login = () => {
 
         const user = userCredential.user;
         await updateProfile(user, { displayName: user.displayName });
-        console.log("User signed in:", user);
-        navigate("/browse");
 
         // history.push("/dashboard"); // Redirect to the dashboard or another route
       }
