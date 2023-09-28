@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import SecondaryContainer from "./SecondaryContainer";
 import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
 
@@ -8,6 +9,7 @@ const MainContainer = () => {
 
   if (movies === null) return;
   const mainMovies = movies.results[0];
+  //   console.log(movies);
 
   const { original_title, overview, id } = mainMovies;
 

@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import Header from "./Header";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -20,7 +20,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {

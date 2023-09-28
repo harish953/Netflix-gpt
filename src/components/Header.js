@@ -52,16 +52,16 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-screen top-0 px-8 py-2 bg-gradient-to-b from-black z-20 flex justify-between ">
+    <div className="absolute w-screen top-0 px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between ">
       <img className="w-44 h-16" src={LOGO} alt="background pic"></img>
-      {user && (
+      {/*user && (
         <div className="flex space-x-10">
           <button className="text-white hover:underline">Home</button>
           <button className="text-white hover:underline">Movies</button>
           <button className="text-white hover:underline">Shows</button>
-          {/* Add more buttons as needed */}
+          {/* Add more buttons as needed }
         </div>
-      )}
+      )*/}
       {user && (
         <div className="flex">
           <img className="w-12 h-12 m-2" src={ICON_URL} alt="user-icon"></img>

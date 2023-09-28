@@ -24,6 +24,7 @@ const MOVIE_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlN2ExYjBjMzg3ZDZiNThjMzM4N2I3YmM0NWY4MDY2MCIsInN1YiI6IjY1MTQyYzE0YTE5OWE2MDBjNDljMTI0YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jm39UP_WvzxhyqXJ8DnbJaTeEkxi160d09KDflLmi3Q",
   },
 };
+const MOVIE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
 export {
   LOGO_URL,
@@ -32,4 +33,5 @@ export {
   API_OPTIONS,
   NOW_PLAYING_URL,
   MOVIE_OPTIONS,
+  MOVIE_IMAGE_URL,
 };
