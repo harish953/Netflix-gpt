@@ -25,7 +25,7 @@ const usePopularMovies = () => {
     };
 
     const data = await axios.request(options);
-    console.log(data);
+    // console.log(data);
 
     dispatch(addPopularMovies(data.data));
   };
