@@ -4,7 +4,7 @@ import { GPT_KEY } from "./key";
 
 // console.log(process.env.GPT_KEY);
 export const openai = new OpenAI({
-  apiKey: GPT_KEY,
+  apiKey: process.env.REACT_APP_GPT_KEY,
   dangerouslyAllowBrowser: true, // defaults to process.env["OPENAI_API_KEY"]
 });
 

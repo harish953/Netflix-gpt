@@ -61,8 +61,12 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-screen top-0 px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between ">
-      <img className="w-44 h-16" src={LOGO} alt="background pic"></img>
+    <div className="absolute w-screen top-0 px-8 py-2 bg-black md:bg-gradient-to-b from-black z-10 flex justify-between flex-col md:flex-row ">
+      <img
+        className="md:w-44 w-28 h-10 md:h-16 mx-auto md:mx-0"
+        src={LOGO}
+        alt="background pic"
+      ></img>
       {/*user && (
         <div className="flex space-x-10">
           <button className="text-white hover:underline">Home</button>
@@ -72,12 +76,12 @@ const Header = () => {
         </div>
       )*/}
       {user && (
-        <div className="flex">
+        <div className="flex sm:justify-center">
           {user && (
             <div className="p-2">
               <select
                 onChange={handleLangChange}
-                className="p-4 m-2 rounded-lg bg-black outline-none text-white"
+                className="p-2 m-2 rounded-lg bg-black outline-none text-white "
               >
                 {LANG_SUPPORTED.map((lang) => (
                   <option className=" text-white" key={lang.identifier}>
@@ -89,7 +93,7 @@ const Header = () => {
           )}
           <button
             onClick={handleSearch}
-            className="text-white h-[40px] mx-6 bg-slate-400 my-4 px-4 rounded-lg"
+            className="text-white h-[40px] mx-6 bg-black my-4 px-4 rounded-lg"
           >
             {" "}
             Search
@@ -98,7 +102,7 @@ const Header = () => {
           {!showGptSearch && (
             <div className="flex">
               <img
-                className="w-12 h-12 m-2"
+                className="h-4 w-4 mt-6 md:w-12 md:h-12 m-2"
                 src={ICON_URL}
                 alt="user-icon"
               ></img>

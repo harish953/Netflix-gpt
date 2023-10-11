@@ -8,7 +8,7 @@ import { openai } from "../utils/openai";
 const GptSearchBar = () => {
   const dispatch = useDispatch();
   const langKey = useSelector((store) => store.config.lang);
-  console.log(lang[langKey].gptSearchHolder);
+
   const searchText = useRef();
 
   //search movie
@@ -24,7 +24,7 @@ const GptSearchBar = () => {
     return json.results;
   };
   const handleGptSearch = async () => {
-    console.log(searchText.current.value);
+    // console.log(searchText.current.value);
 
     const gptQuery =
       "Act as a movie recommend system and suggest movie for query:" +
@@ -34,25 +34,30 @@ const GptSearchBar = () => {
       messages: [{ role: "user", content: gptQuery }],
       model: "gpt-3.5-turbo",
     });
-    console.log(result.choices);
+    // console.log(result.choices);
     const gptMovies = result.choices?.[0]?.message?.content.split(",");
 
     const promiseArray = gptMovies.map((movie) => searchTMDBMovie(movie));
 
-    const tmdbResult = await Promise.All(promiseArray);
+    const tmdbResult = await Promise.all(promiseArray);
+    // console.log(tmdbResult);
+
+    dispatch(
+      addGptMovieResults({ movieResults: tmdbResult, movieNames: gptMovies })
+    );
   };
 
   return (
-    <div className="pt-[5%] flex justify-center">
+    <div className="pt-[10%] flex justify-center">
       <form
-        className=" w-1/2  text-center bg-transparent"
+        className="w-full md:w-1/2  text-center bg-transparent"
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
         <input
           ref={searchText}
-          className=" w-2/3 px-10 py-2 m-4 rounded-full outline-none "
+          className=" md:w-2/3 w-3/4 px-10 py-2 m-4 rounded-full outline-none "
           type="text"
           placeholder={lang[langKey].gptSearchHolder}
         ></input>

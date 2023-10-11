@@ -1,20 +1,20 @@
 import React from "react";
 import { IMAGE_URL } from "../utils/constants";
-import GptMovieSuggestion from "./GptMovieSuggestion";
+import GptMovieSuggestions from "./GptMovieSuggestions";
 import GptSearchBar from "./GptSearchBar";
 
 const Search = () => {
   return (
-    <div>
-      <div className=" absolute -z-10">
-        <img
-          className="w-full h-full object-cover"
-          src={IMAGE_URL}
-          alt="Background"
-        />
+    <div className="relative">
+      <img
+        className="absolute inset-0 w-full h-screen object-cover -z-10 bg-repeat-y"
+        src={IMAGE_URL}
+        alt="Background"
+      />
+      <div className="pt-[30%] md:pt-[10%]">
+        <GptSearchBar />
+        <GptMovieSuggestions />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestion />
     </div>
   );
 };
